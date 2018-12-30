@@ -1,8 +1,9 @@
 /**
  * Rock Paper Scissors Intent
  */
-const Intent = require('../../../../src/Intent/intent');
-var _ = require('underscore');
+const Intent = girequire('src/Intent/intent');
+
+const _ = require('underscore');
 
 module.exports = class RockPaperScissorsIntent extends Intent {
 
@@ -23,7 +24,7 @@ module.exports = class RockPaperScissorsIntent extends Intent {
 
 		this.parameter('play_again', {
 			name: "Play Again",
-			entity: 'App.Common.Entity.Confirm'
+			entity: 'App.Basics.Entity.Confirm'
 		});
 	}
 
@@ -89,7 +90,7 @@ module.exports = class RockPaperScissorsIntent extends Intent {
 		output.push('Play again?');
 
 		request.expect({
-			entity: 'App.Common.Entity.Confirm',
+			entity: 'App.Basics.Entity.Confirm',
 			action: 'play_again',
 			force: false
 		});
